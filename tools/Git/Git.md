@@ -34,3 +34,19 @@ Git 记录的是什么？
 `git config core.ignorecase false  `
 + 配置本地仓库文件大小写敏感，建议配置，以免文件更新有误；  
 `git config --list  `
+## 3.增加/删除文件  
+![img.png](git-add-or-delete-profile.png)  
+1. 添加指定文件到暂存区  
+   `git add [file1] [file2] ...  `
+2. 添加指定目录到暂存区，包括子目录  
+   `git add [dir]  `
+3. 添加当前目录的所有文件到暂存区  
+   `git add .  `
+4. 添加每个变化前，都会要求确认，对于同一个文件的多处变化，可以实现分次提交  
+  ` git add -p  `  
+5. 删除工作区文件，并且将这次删除放入暂存区  
+  `git rm [file1] [file2] ...  `  
+6. 停止追踪指定文件，但该文件会保留在工作区  
+   `git rm --cached [file] `   
+7. 改名文件，并且将这个改名放入暂存区  
+   `git mv [file-original] [file-renamed] `  
