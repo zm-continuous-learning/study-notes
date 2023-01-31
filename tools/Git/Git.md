@@ -25,6 +25,12 @@ Git 记录的是什么？
 如输出版本号，则说明安装成功。  
 `git version 2.20.1`
 ### 2.2 git基本配置
-
-![img.png](git-config.png)
-
+![img.png](git-config.png)  
++ 通过下面这些指令，配置用户名和邮箱  
+`git config --global user.name "your_name"  `
++ 名字和邮箱需要用双引号包裹，回车之后，如路径没有任何变化说明设置成功；  
+`git config --global user.email "your_email@gmail.com"  `
++ 此处的邮箱账号可以是假的账号，但是格式必须复合邮箱格式，同样回车成功之后路径不会有变化；  
+`git config core.ignorecase false  `
++ 配置本地仓库文件大小写敏感，建议配置，以免文件更新有误；  
+`git config --list  `
