@@ -31,7 +31,7 @@ node的版本管理器，可以方便地安装&切换不同版本的node
 + 可以查看目前有哪些node可以安装：
 `nvm ls-remote`
 + 安装一个node的新版本以后，通过指令 nvm ls 查看会返回如下结果  
-![img.png](nvm-ls.png)
+![img.png](png/nvm-ls.png)
 #### 2.2 node 版本切换
 + 使用如下指令切换node版本：
 `nvm use system`
@@ -47,16 +47,16 @@ Now using system version of node: v10.5.3 (npm v6.4.1)
 `nvm use node`   
 + 由于目前最新的版本就是default的10.15.3，所以就等同于nvm use default。
 + 再安装一个版本：8.16.0。输入指令nvm install 8.16.0，返回如下内容：  
-![img.png](nvm-install-spesfic.png)  
+![img.png](png/nvm-install-spesfic.png)  
 发现比之前多了一行-> v8.16.0，并且8.16.0被应用。
 
 #### 2.3 给特定版本分配alias
 从8.16.0切换到别的版本以后，如果再想切换回来，只能通过nvm use 8.16.0。8.16.0不方便记忆，也不方便输入，可以通过给这个版本设置一个alias，来解决这个问题。输入如下指令：
 `nvm alias carbon 8.16.0`  
 返回的结果：
-![img.png](nvm-alias-carbon.png)  
+![img.png](png/nvm-alias-carbon.png)  
 此时，再次输入nvm ls，会返回如下结果  
-![img.png](carbon-result.png)  
+![img.png](png/carbon-result.png)  
 会发现多了一行carbon -> 8.16.0 (-> v8.16.0)，这代表carbon就是版本8.16.0，所以如果想切换到8.16.0，可以输入如下指令：  
 `nvm use carbon`  
 也可以通过alias指令，改变default所代表的版本：  
