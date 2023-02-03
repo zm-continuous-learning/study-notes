@@ -121,6 +121,12 @@
 - rebase的过程中,也许会出现冲突,Git会停止rebase并让你解决冲突,在解决完冲突之后,用git add去更新这些内容,然后无需执行commit,只需要:
 - git rebase --continue就会继续打余下的补丁.
 - git rebase --abort将会终止rebase,当前分支将会回到rebase之前的状态.
+
+## git push
+push your new branches and data to a remote repository.
+- git push [alias] [branch]
+- 将会把当前分支merge到alias上的[branch]分支.如果分支已经存在,将会更新,如果不存在,将会添加这个分支.
+- 如果有多个人向同一个remote repo push代码, Git会首先在你试图push的分支上运行git log,检查它的历史中是否能看到server上的branch现在的tip,如果本地历史中不能看到server的tip,说明本地的代码不是最新的,Git会拒绝你的push,让你先fetch,merge,之后再push,这样就保证了所有人的改动都会被考虑进来.
  
 
  
