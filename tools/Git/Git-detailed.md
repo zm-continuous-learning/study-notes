@@ -295,6 +295,7 @@ git pull = git fetch + git merge FETCH_HEAD  <br />git pull --rebase =  git fetc
 ![img.png](png/merge-rebase.png)
 <a name="omSlk"></a>
 ### 10.3 rebase的好处
-想要更好的提交树，使用rebase操作会更好一点。<br />这样可以线性的看到每一次提交，并且没有增加提交节点。<br />merge 操作遇到冲突的时候，当前merge不能继续进行下去。手动修改冲突内容后，add 修改，commit 就可以了。<br />而rebase 操作的话，会中断rebase,同时会提示去解决冲突。<br />解决冲突后,将修改add后执行**git rebase –continue**继续操作，或者**git rebase –skip**忽略冲突
-
-
+想要更好的提交树，使用rebase操作会更好一点。<br />这样可以线性的看到每一次提交，并且没有增加提交节点。<br />
+merge 操作遇到冲突的时候，当前merge不能继续进行下去。手动修改冲突内容后，add 修改，commit 就可以了。<br />
+而rebase 操作的话，会中断rebase,同时会提示去解决冲突。<br />
+解决冲突后,将修改add后执行**git rebase –continue**继续操作，或者**git rebase –skip**忽略冲突
