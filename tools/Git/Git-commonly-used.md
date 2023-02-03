@@ -92,6 +92,36 @@
   - 把远程分支merge到当前分支.
   - 如果出现冲突,需要手动修改,可以用git mergetool.
   - 解决冲突的时候可以用到git diff,解决完之后用git add添加,即表示冲突已经被resolved.
+  - 例子：git merge origin/merge-test
+
+## git remote
+- list, add and delete remote repository aliases.
+- 因为不需要每次都用完整的url,所以Git为每一个remote repo的url都建立一个别名,然后用git remote来管理这个list.
+  - git remote: 列出remote aliases.
+  - 如果你clone一个project,Git会自动将原来的url添加进来,别名就叫做:origin.
+  - git remote -v:可以看见每一个别名对应的实际url.
+  - git remote add [alias] [url]: 添加一个新的remote repo.
+  - git remote rm [alias]: 删除一个存在的remote alias.
+  - git remote rename [old-alias] [new-alias]: 重命名.
+  - git remote set-url [alias] [url]:更新url. 可以加上—push和fetch参数,为同一个别名set不同的存取地址.
+
+## git fetch
+- download new branches and data from a remote repository.
+- 可以git fetch [alias]取某一个远程repo,也可以git fetch --all取到全部repo
+- fetch将会取到所有你本地没有的数据,所有取下来的分支可以被叫做remote branches,它们和本地分支一样(可以看diff,log等,也可以merge到其他分支),但是Git不允许你checkout到它们. 
+
+## git pull
+- fetch from a remote repo and try to merge into the current branch.
+- pull == fetch + merge FETCH_HEAD
+- git pull会首先执行git fetch,然后执行git merge,把取来的分支的head merge到当前分支.这个merge操作会产生一个新的commit.    
+- 如果使用git pull --rebase参数,它会执行git rebase来取代原来的git merge，不会产生新的commit。
+ 
+## git rebase
+- --rebase不会产生合并的提交,它会将本地的所有提交临时保存为补丁(patch),放在”.git/rebase”目录中,然后将当前分支更新到最新的分支尖端,最后把保存的补丁应用到分支上.
+- rebase的过程中,也许会出现冲突,Git会停止rebase并让你解决冲突,在解决完冲突之后,用git add去更新这些内容,然后无需执行commit,只需要:
+- git rebase --continue就会继续打余下的补丁.
+- git rebase --abort将会终止rebase,当前分支将会回到rebase之前的状态.
+ 
 
  
 
