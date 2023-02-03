@@ -74,9 +74,22 @@
 ## git branch
 - git branch 列出本地所有分支,当前分支会被星号标示出.
 - git branch -v可以看见每一个分支的最后一次提交.
-- git branch (branchname): 创建一个新的分支(当你用这种方式创建分支的时候,分支是基于你的上一次提交建立的). 
-- git branch -d (branchname): 删除一个分支.
+- git branch (branchname)  创建一个新的分支(当你用这种方式创建分支的时候,分支是基于你的上一次提交建立的). 
+- git branch -d (branchname)  删除一个分支.
 - 删除remote的分支:
-- git push (remote-name) :(branch-name): delete a remote branch.
-- 
+- git push (remote-name) :(branch-name)  delete a remote branch.
+  - 例：git push origin :test
+
+## git checkout
+- git checkout (branchname)   切换到一个分支.
+- git checkout -b (branchname): 创建并切换到新的分支.
+  - 这个命令是将git branch newbranch和git checkout newbranch合在一起的结果.
+- checkout还有另一个作用:替换本地改动:
+- git checkout --<filename>
+  - 此命令会使用HEAD中的最新内容替换掉你的工作目录中的文件.已添加到暂存区的改动以及新文件都不会受到影响.
+  - 注意:git checkout filename会删除该文件中所有没有暂存和提交的改动,这个操作是不可逆的.
+
+
+
+
 
