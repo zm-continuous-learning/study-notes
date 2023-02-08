@@ -38,7 +38,23 @@ https://www.cnblogs.com/Insist-Y/p/16592899.html
 ![img.png](png/retrying-yarn-result.png)
 
 ### 3. 配置
-待学习
+官方文档：https://cn.vitejs.dev/config/#resolve-alias
+## 3.1 配置 resolve.alias
+```javascript
+import { defineConfig } from 'vite'  
+import react from '@vitejs/plugin-react'  
+import path from 'path';  
+
+export default defineConfig({  
+  plugins: [react()],  
+  resolve: {
+      alias: {  
+'@': path.resolve(__dirname, './src')  
+}  
+}  
+})
+```
+
 
 ## react-cli创建React项目
 ### 1. 安装react-cli脚手架
